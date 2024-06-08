@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--    컴포넌트 추가프래그먼트 or 실행 프래그먼트에서 받은 타입 이름을 텍스트로 지정-->
+
+    <!--    스톱워치 시간-->
+
+    <!--    db에 저장될 메모-->
+
+
+    <ImageView
+        android:id="@+id/timer_image"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="58dp"
+        android:layout_marginBottom="54dp"
+        android:gravity="center"
+        android:src="@drawable/walk_image" />
+
+    <TextView
+        android:id="@+id/project_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="196dp"
+        android:gravity="center"
+        android:text="NULL"
+        android:textSize="40dp"
+        android:textStyle="bold" />
+
+
+    <ImageView
+        android:id="@+id/step_image"
+        android:layout_width="50dp"
+        android:layout_height="70dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="262dp"
+        android:src="@drawable/step_image" />
+
+    <TextView
+        android:id="@+id/step_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="109dp"
+        android:layout_marginTop="270dp"
+        android:gravity="center"
+        android:text="NULL"
+        android:textSize="40dp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/cal_image"
+        android:layout_width="50dp"
+        android:layout_height="70dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="215dp"
+        android:layout_marginTop="262dp"
+        android:src="@drawable/cal_image" />
+
+    <TextView
+        android:id="@+id/cal_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="270dp"
+        android:layout_marginEnd="51dp"
+        android:gravity="center"
+        android:text="NULL"
+        android:textSize="40dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/finish_chronometer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/project_name"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="7dp"
+        android:layout_marginTop="99dp"
+        android:layout_marginEnd="-7dp"
+        android:gravity="center"
+        android:text="00:00"
+        android:textSize="60dp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/project_memo"
+        android:layout_width="300dp"
+        android:layout_height="200dp"
+        android:layout_below="@+id/finish_chronometer"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="34dp"
+        android:layout_marginBottom="132dp"
+        android:background="@drawable/memo_border"
+        android:hint="메모를 입력하세요"
+        android:padding="16dp"/>
+
+    <Button
+        android:id="@+id/btn_finish"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="53dp"
+        android:gravity="center"
+        android:text="완료"
+        android:textStyle="bold" />
+
+
+</RelativeLayout>

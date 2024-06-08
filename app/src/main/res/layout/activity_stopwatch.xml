@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--    컴포넌트 추가 프래그먼트에서 타입에 맞는 이미지로 변경-->
+    <ImageView
+        android:id="@+id/stopWatch_image"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginBottom="20dp"
+        android:gravity="center"
+        android:src="@drawable/stopwatch_image"/>
+
+<!--    컴포넌트 추가 프래그먼트에서 타입을 받아 그 타입에 맞게 텍스트 변경-->
+    <TextView
+        android:id="@+id/project_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="NULL"
+        android:textSize="40dp"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="300dp"
+        android:textStyle="bold"/>
+
+    <Chronometer
+        android:id="@+id/main_chronometer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="400dp"
+        android:layout_marginBottom="20dp"
+        android:gravity="center_horizontal"
+        android:textSize="60dp"/>
+
+    <TextView
+        android:id="@+id/stopwatchText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="스톱워치를 시작하세요"
+        android:textSize="30dp"
+        android:gravity="center_horizontal"
+        android:layout_below="@+id/main_chronometer"
+        android:textStyle="bold"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="70dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/startBtn"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/round_square_button"
+            android:text="Start"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/finishBtn"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:background="@drawable/round_square_button"
+            android:enabled="false"
+            android:text="Finish"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+</RelativeLayout>

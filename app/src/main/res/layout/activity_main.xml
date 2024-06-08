@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main_background"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:id="@+id/fragment_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+    </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/main_menu_bar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="11"
+        android:background="@drawable/border"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/home_icon_button"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="bottom"
+            android:layout_weight="1"
+            android:background="@color/white"
+            android:contentDescription="home button"
+            android:src="@drawable/ic_home"/>
+
+        <ImageButton
+            android:id="@+id/calendar_icon_button"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="bottom"
+            android:layout_weight="1"
+            android:background="@color/white"
+            android:contentDescription="calendar button"
+            android:src="@drawable/ic_calendar"/>
+
+        <ImageButton
+            android:id="@+id/setting_icon_button"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="bottom"
+            android:layout_weight="1"
+            android:background="@color/white"
+            android:contentDescription="setting button"
+            android:src="@drawable/ic_other_menu"/>
+
+    </LinearLayout>
+
+</LinearLayout>

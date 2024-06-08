@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <ImageView
+        android:id="@+id/walk_image"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_marginTop="76dp"
+        android:gravity="center"
+        android:src="@drawable/walk_image"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/get_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="180dp"
+        android:text="NULL"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/step_image"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/walk_image" />
+
+    <Chronometer
+        android:id="@+id/main_chronometer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:textSize="60dp"
+        app:layout_constraintBottom_toTopOf="@+id/step_image"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/get_name"
+        app:layout_constraintVertical_bias="0.363" />
+
+    <ImageView
+        android:id="@+id/step_image"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="200dp"
+        android:src="@drawable/step_image"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/walk_image" />
+
+    <TextView
+        android:id="@+id/stepCountView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:text="0"
+        android:textSize="50dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/step_image"
+        app:layout_constraintStart_toEndOf="@+id/step_image" />
+
+
+    <TextView
+        android:id="@+id/stepCountTag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:text="걸음"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/stepCountView"
+        app:layout_constraintStart_toEndOf="@+id/stepCountView" />
+
+    <ImageView
+        android:id="@+id/cal_image"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="32dp"
+        android:gravity="center"
+        android:src="@drawable/cal_image"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/step_image" />
+
+    <TextView
+        android:id="@+id/calView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:text="0"
+        android:textSize="50dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/cal_image"
+        app:layout_constraintStart_toEndOf="@+id/cal_image" />
+
+    <TextView
+        android:id="@+id/caltag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:text="칼로리"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/calView"
+        app:layout_constraintStart_toEndOf="@+id/calView" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="52dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <Button
+            android:id="@+id/startBtn"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/round_square_button"
+            android:text="Start"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/finishBtn"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:background="@drawable/round_square_button"
+            android:enabled="false"
+            android:text="Finish"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

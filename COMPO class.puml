@@ -1,0 +1,205 @@
+@startuml
+class com.example.compo.CalendarUtil {
++ {static} Calendar calendarDate
++ {static} Calendar selectedDate
+}
+
+class com.example.compo.CurrentDate {
++ String getDate()
+}
+
+class com.example.compo.HomeFragment {
+~ CurrentDate currentDate
+~ FloatingActionButton addButton
+~ DatabaseHelper databaseHelper
+~ SQLiteDatabase database
+~ ViewGroup rootView
++ View onCreateView(LayoutInflater,ViewGroup,Bundle)
++ void onViewCreated(View,Bundle)
++ void onResume()
++ void showFavorites(ViewGroup)
+}
+
+
+class com.example.compo.FinishActivity {
+~ DatabaseHelper databaseHelper
+~ SQLiteDatabase database
+~ String tableName
+# void onCreate(Bundle)
+}
+
+
+class com.example.compo.StopwatchActivity {
+~ Chronometer chronometer
+- long pauseTime
++ void onCreate(Bundle)
+}
+
+
+class com.example.compo.AddComponentActivity {
+~ String title
+~ String type
+~ String color
+~ int measured
+~ Button acceptButton
+~ Button colorSelectButton
+~ Spinner typeSelectSpinner
+~ Spinner colorSelectSpinner
+~ RadioGroup radioGroup
+~ RadioButton timerButton
+~ RadioButton stopwatchButton
+~ DatabaseHelper databaseHelper
+~ SQLiteDatabase database
+# void onCreate(Bundle)
+}
+
+
+class com.example.compo.recordDialog {
+- TextView txt_contents
+- TextView txt_record_name
+- Button shutdownClick
+~ SQLiteDatabase database
+~ DatabaseHelper databaseHelper
+}
+
+class com.example.compo.CalendarAdapter {
+~ ArrayList<Date> dayList
+~ CalendarFragment calendarFragment
+- dateClickListener mListener
++ CalendarViewHolder onCreateViewHolder(ViewGroup,int)
++ void onBindViewHolder(CalendarViewHolder,int)
++ int getItemCount()
+}
+
+
+class com.example.compo.CalendarAdapter$CalendarViewHolder {
+~ TextView dayText
+~ View parentView
+}
+
+class com.example.compo.StopwatchFinishActivity {
+~ DatabaseHelper databaseHelper
+~ SQLiteDatabase database
++ void onCreate(Bundle)
+}
+
+
+class com.example.compo.SettingFragment {
+~ ViewGroup rootView
++ View onCreateView(LayoutInflater,ViewGroup,Bundle)
+}
+
+
+class com.example.compo.CalendarFragment {
+- ArrayList<Integer> textViewIDs
+- recordDialog recorddialog
+~ TextView monthYearText
+~ RecyclerView recyclerView
+~ RelativeLayout recordView
+~ SQLiteDatabase database
+~ DatabaseHelper databaseHelper
+~ ViewGroup rootView
++ View onCreateView(LayoutInflater,ViewGroup,Bundle)
++ String monthYearFromDate(Calendar)
+- void setMonthView()
++ ArrayList<Date> daysInMonthArray()
++ void setRecordView(String)
+- void removeViewByID(int)
+- void removeAllRecordViews()
++ void onDateCilcked()
++ void handleTextViewClick(int,View)
+}
+
+
+class com.example.compo.TimerActivity {
+- int duration
+- boolean timerRunning
+~ CountDownTimer countDownTimer
+- long pauseTime
+~ long startNow
+~ long finishNow
+~ long elapsedTimerTime
++ void onCreate(Bundle)
+}
+
+
+class com.example.compo.DatabaseHelper {
++ {static} String NAME
++ {static} int VERSION
++ void onCreate(SQLiteDatabase)
++ void onOpen(SQLiteDatabase)
++ void onUpgrade(SQLiteDatabase,int,int)
+}
+
+
+class com.example.compo.TimerFinishActivity {
+~ DatabaseHelper databaseHelper
+~ SQLiteDatabase database
++ void onCreate(Bundle)
+}
+
+
+class com.example.compo.PedometerActivity {
+- SensorManager sensorManager
+- Sensor stepCountSensor
+- TextView stepCountView
+- Button startBtn
+- Chronometer chronometer
+- boolean isRunning
+- int currentSteps
+- double caloriesBurned
+- long pauseOffset
+- double CALORIES_PER_STEP
+- long startTime
+# void onCreate(Bundle)
+# void onStart()
+# void onStop()
++ void onSensorChanged(SensorEvent)
++ void onAccuracyChanged(Sensor,int)
+- void startChronometer()
+- void resetChronometer()
+- void resetSteps()
+}
+
+
+interface com.example.compo.dateClickListener {
+~ void onDateCilcked()
+}
+
+class com.example.compo.MainActivity {
+- int fragment_home
+- int fragment_calendar
+- int fragment_setting
+~ CurrentDate currentDate
+~ FloatingActionButton addButton
+~ ImageButton homeButton
+~ ImageButton calendarButton
+~ ImageButton settingButton
+~ DatabaseHelper databaseHelper
+~ SQLiteDatabase database
+# void onCreate(Bundle)
+- void FragmentView(int)
+}
+
+
+
+
+androidx.fragment.app.Fragment <|-- com.example.compo.HomeFragment
+androidx.appcompat.app.AppCompatActivity <|-- com.example.compo.FinishActivity
+androidx.appcompat.app.AppCompatActivity <|-- com.example.compo.StopwatchActivity
+androidx.appcompat.app.AppCompatActivity <|-- com.example.compo.AddComponentActivity
+android.app.Dialog <|-- com.example.compo.recordDialog
+com.example.compo.Adapter <|-- com.example.compo.CalendarAdapter
+com.example.compo.CalendarAdapter +.. com.example.compo.CalendarAdapter$CalendarViewHolder
+com.example.compo.ViewHolder <|-- com.example.compo.CalendarAdapter$CalendarViewHolder
+androidx.appcompat.app.AppCompatActivity <|-- com.example.compo.StopwatchFinishActivity
+androidx.fragment.app.Fragment <|-- com.example.compo.SettingFragment
+com.example.compo.dateClickListener <|.. com.example.compo.CalendarFragment
+androidx.fragment.app.Fragment <|-- com.example.compo.CalendarFragment
+androidx.appcompat.app.AppCompatActivity <|-- com.example.compo.TimerActivity
+android.database.sqlite.SQLiteOpenHelper <|-- com.example.compo.DatabaseHelper
+androidx.appcompat.app.AppCompatActivity <|-- com.example.compo.TimerFinishActivity
+android.hardware.SensorEventListener <|.. com.example.compo.PedometerActivity
+androidx.appcompat.app.AppCompatActivity <|-- com.example.compo.PedometerActivity
+androidx.appcompat.app.AppCompatActivity <|-- com.example.compo.MainActivity
+@enduml

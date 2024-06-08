@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/timer_image"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:gravity="center"
+        android:src="@drawable/stopwatch_image"
+        android:layout_above="@+id/project_name"/>
+
+    <!--    컴포넌트 추가프래그먼트 or 실행 프래그먼트에서 받은 타입 이름을 텍스트로 지정-->
+    <TextView
+        android:id="@+id/project_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="NULL"
+        android:textStyle="bold"
+        android:gravity="center_horizontal"
+        android:textSize="35dp"
+        android:layout_above="@+id/finish_chronometer"/>
+
+    <!--    스톱워치 시간-->
+        <TextView
+            android:id="@+id/finish_chronometer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="35dp"
+            android:gravity="center"
+            android:layout_above="@+id/project_memo"
+            android:layout_marginBottom="40dp"
+            android:text="00:00"/>
+
+    <!--    db에 저장될 메모-->
+    <EditText
+        android:id="@+id/project_memo"
+        android:layout_width="300dp"
+        android:layout_height="200dp"
+        android:layout_centerInParent="true"
+        android:hint="메모를 입력하세요"
+        android:background="@drawable/memo_border"
+        android:layout_above="@+id/btn_finish"
+        android:layout_marginBottom="20dp"/>
+
+    <Button
+        android:id="@+id/btn_finish"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"
+        android:text="완료"
+        android:textStyle="bold"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="70dp"/>
+
+
+</RelativeLayout>

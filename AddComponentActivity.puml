@@ -1,0 +1,23 @@
+@startuml
+class com.example.compo.AddComponentActivity {
+~ String title
+~ String type
+~ String color
+~ int measured
+~ Button acceptButton
+~ Button colorSelectButton
+~ Spinner typeSelectSpinner
+~ Spinner colorSelectSpinner
+~ RadioGroup radioGroup
+~ RadioButton timerButton
+~ RadioButton stopwatchButton
+~ DatabaseHelper databaseHelper
+~ SQLiteDatabase database
+# void onCreate(Bundle)
+}
+
+
+
+
+androidx.appcompat.app.AppCompatActivity <|-- com.example.compo.AddComponentActivity
+@enduml

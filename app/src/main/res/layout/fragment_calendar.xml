@@ -1,0 +1,719 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/calendar_Fragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".CalendarFragment">
+
+
+        <LinearLayout
+            android:id="@+id/activity_custom_calendar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/white">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/pre_btn"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:src="@drawable/ic_previous" />
+
+                <TextView
+                    android:id="@+id/monthYearText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="4월 2021"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/black"
+                    android:textSize="25sp" />
+
+                <ImageButton
+                    android:id="@+id/next_btn"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:src="@drawable/ic_next" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="5dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="SUN"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/holo_red_dark"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="MON"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="TUE"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="WED"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="THU"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="FRI"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="SAT"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/holo_blue_dark"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </LinearLayout>
+
+        <ScrollView
+            android:id="@+id/scroll_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/white"
+            android:fillViewport="true"
+            android:scrollbars="none">
+
+            <RelativeLayout
+                android:id="@+id/recordTable"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TableLayout
+                    android:id="@+id/TableLayout1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#c4c4c4"
+                    android:columnCount="2"
+                    android:orientation="vertical"
+                    android:rowCount="12">
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="180sp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/view1"
+                            android:layout_width="58sp"
+                            android:layout_height="180sp"
+                            android:layout_rowWeight="1"
+                            android:layout_columnWeight="1"
+                            android:layout_margin="1dp"
+                            android:background="@color/white"
+                            android:text="1시"
+                            android:textColor="@color/black"
+                            android:textSize="17sp" />
+
+                        <TextView
+                            android:id="@+id/view1_1"
+                            android:layout_width="346dp"
+                            android:layout_height="match_parent"
+                            android:layout_margin="1dp"
+                            android:background="@color/white" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="180sp">
+
+                        <TextView
+                            android:id="@+id/view2"
+                            android:layout_height="180sp"
+                            android:layout_rowWeight="1"
+                            android:layout_columnWeight="1"
+                            android:layout_margin="1dp"
+                            android:background="@color/white"
+                            android:text="2시"
+                            android:textSize="17sp" />
+
+                        <TextView
+                            android:id="@+id/view2_1"
+                            android:layout_width="346dp"
+                            android:layout_height="match_parent"
+                            android:layout_margin="1dp"
+                            android:background="@color/white" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/view3"
+                            android:layout_height="180sp"
+                            android:layout_rowWeight="1"
+                            android:layout_columnWeight="1"
+                            android:layout_margin="1dp"
+                            android:background="@color/white"
+                            android:text="3시"
+                            android:textSize="17sp" />
+
+                        <TextView
+                            android:id="@+id/view3_1"
+                            android:layout_width="346dp"
+                            android:layout_height="match_parent"
+                            android:layout_margin="1dp"
+                            android:background="@color/white" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="180sp">
+
+                        <TextView
+                            android:id="@+id/view4"
+                            android:layout_height="180sp"
+                            android:layout_rowWeight="1"
+                            android:layout_columnWeight="1"
+                            android:layout_margin="1dp"
+                            android:background="@color/white"
+                            android:text="4시"
+                            android:textSize="17sp" />
+
+                        <TextView
+                            android:id="@+id/view4_1"
+                            android:layout_width="346dp"
+                            android:layout_height="match_parent"
+                            android:layout_margin="1dp"
+                            android:background="@color/white" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="180sp">
+
+                        <TextView
+                            android:id="@+id/view5"
+                            android:layout_height="180sp"
+                            android:layout_rowWeight="1"
+                            android:layout_columnWeight="1"
+                            android:layout_margin="1dp"
+                            android:background="@color/white"
+                            android:text="5시"
+                            android:textSize="17sp" />
+
+                        <TextView
+                            android:id="@+id/view5_1"
+                            android:layout_width="346dp"
+                            android:layout_height="match_parent"
+                            android:layout_margin="1dp"
+                            android:background="@color/white" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="180sp">
+
+                        <TextView
+                            android:id="@+id/view6"
+                            android:layout_height="180sp"
+                            android:layout_rowWeight="1"
+                            android:layout_columnWeight="1"
+                            android:layout_margin="1dp"
+                            android:background="@color/white"
+                            android:text="6시"
+                            android:textSize="17sp" />
+
+                        <TextView
+                            android:id="@+id/view6_1"
+                            android:layout_width="346dp"
+                            android:layout_height="match_parent"
+                            android:layout_margin="1dp"
+                            android:background="@color/white" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="180sp">
+
+                        <TextView
+                            android:id="@+id/view7"
+                            android:layout_height="180sp"
+                            android:layout_rowWeight="1"
+                            android:layout_columnWeight="1"
+                            android:layout_margin="1dp"
+                            android:background="@color/white"
+                            android:text="7시"
+                            android:textSize="17sp" />
+
+                        <TextView
+                            android:id="@+id/view7_1"
+                            android:layout_width="346dp"
+                            android:layout_height="match_parent"
+                            android:layout_margin="1dp"
+                            android:background="@color/white" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="180sp">
+
+                        <TextView
+                            android:id="@+id/view8"
+                            android:layout_height="180sp"
+                            android:layout_rowWeight="1"
+                            android:layout_columnWeight="1"
+                            android:layout_margin="1dp"
+                            android:background="@color/white"
+                            android:text="8시"
+                            android:textSize="17sp" />
+
+                        <TextView
+                            android:id="@+id/view8_1"
+                            android:layout_width="346dp"
+                            android:layout_height="match_parent"
+                            android:layout_margin="1dp"
+                            android:background="@color/white" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="180sp">
+
+                        <TextView
+                            android:id="@+id/view9"
+                            android:layout_height="180sp"
+                            android:layout_rowWeight="1"
+                            android:layout_columnWeight="1"
+                            android:layout_margin="1dp"
+                            android:background="@color/white"
+                            android:text="9시"
+                            android:textSize="17sp" />
+
+                        <TextView
+                            android:id="@+id/view9_1"
+                            android:layout_width="346dp"
+                            android:layout_height="match_parent"
+                            android:layout_margin="1dp"
+                            android:background="@color/white" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="180sp">
+
+                        <TextView
+                            android:id="@+id/view10"
+                            android:layout_height="180sp"
+                            android:layout_rowWeight="1"
+                            android:layout_columnWeight="1"
+                            android:layout_margin="1dp"
+                            android:background="@color/white"
+                            android:text="10시"
+                            android:textSize="17sp" />
+
+                        <TextView
+                            android:id="@+id/view10_1"
+                            android:layout_width="346dp"
+                            android:layout_height="match_parent"
+                            android:layout_margin="1dp"
+                            android:background="@color/white" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="180sp">
+
+                        <TextView
+                            android:id="@+id/view11"
+                            android:layout_height="180sp"
+                            android:layout_rowWeight="1"
+                            android:layout_columnWeight="1"
+                            android:layout_margin="1dp"
+                            android:background="@color/white"
+                            android:text="11시"
+                            android:textSize="17sp" />
+
+                        <TextView
+                            android:id="@+id/view11_1"
+                            android:layout_width="346dp"
+                            android:layout_height="match_parent"
+                            android:layout_margin="1dp"
+                            android:background="@color/white" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="180sp">
+
+                        <TextView
+                            android:id="@+id/view12"
+                            android:layout_height="180sp"
+                            android:layout_rowWeight="1"
+                            android:layout_columnWeight="1"
+                            android:layout_margin="1dp"
+                            android:background="@color/white"
+                            android:text="12시"
+                            android:textSize="17sp" />
+
+                        <TextView
+                            android:id="@+id/view12_1"
+                            android:layout_width="346dp"
+                            android:layout_height="match_parent"
+                            android:layout_margin="1dp"
+                            android:background="@color/white" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="180sp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/view13"
+                            android:layout_height="180sp"
+                            android:layout_rowWeight="1"
+                            android:layout_columnWeight="1"
+                            android:layout_margin="1dp"
+                            android:background="@color/white"
+                            android:text="13시"
+                            android:textColor="@color/black"
+                            android:textSize="17sp" />
+
+                        <TextView
+                            android:id="@+id/view13_1"
+                            android:layout_width="346dp"
+                            android:layout_height="match_parent"
+                            android:layout_margin="1dp"
+                            android:background="@color/white" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="180sp">
+
+                        <TextView
+                            android:id="@+id/view14"
+                            android:layout_height="180sp"
+                            android:layout_rowWeight="1"
+                            android:layout_columnWeight="1"
+                            android:layout_margin="1dp"
+                            android:background="@color/white"
+                            android:text="14시"
+                            android:textSize="17sp" />
+
+                        <TextView
+                            android:id="@+id/view14_1"
+                            android:layout_width="346dp"
+                            android:layout_height="match_parent"
+                            android:layout_margin="1dp"
+                            android:background="@color/white" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/view15"
+                            android:layout_height="180sp"
+                            android:layout_rowWeight="1"
+                            android:layout_columnWeight="1"
+                            android:layout_margin="1dp"
+                            android:background="@color/white"
+                            android:text="15시"
+                            android:textSize="17sp" />
+
+                        <TextView
+                            android:id="@+id/view15_1"
+                            android:layout_width="346dp"
+                            android:layout_height="match_parent"
+                            android:layout_margin="1dp"
+                            android:background="@color/white" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="180sp">
+
+                        <TextView
+                            android:id="@+id/view16"
+                            android:layout_height="180sp"
+                            android:layout_rowWeight="1"
+                            android:layout_columnWeight="1"
+                            android:layout_margin="1dp"
+                            android:background="@color/white"
+                            android:text="16시"
+                            android:textSize="17sp" />
+
+                        <TextView
+                            android:id="@+id/view16_1"
+                            android:layout_width="346dp"
+                            android:layout_height="match_parent"
+                            android:layout_margin="1dp"
+                            android:background="@color/white" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="180sp">
+
+                        <TextView
+                            android:id="@+id/view17"
+                            android:layout_height="180sp"
+                            android:layout_rowWeight="1"
+                            android:layout_columnWeight="1"
+                            android:layout_margin="1dp"
+                            android:background="@color/white"
+                            android:text="17시"
+                            android:textSize="17sp" />
+
+                        <TextView
+                            android:id="@+id/view17_1"
+                            android:layout_width="346dp"
+                            android:layout_height="match_parent"
+                            android:layout_margin="1dp"
+                            android:background="@color/white" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="180sp">
+
+                        <TextView
+                            android:id="@+id/view18"
+                            android:layout_height="180sp"
+                            android:layout_rowWeight="1"
+                            android:layout_columnWeight="1"
+                            android:layout_margin="1dp"
+                            android:background="@color/white"
+                            android:text="18시"
+                            android:textSize="17sp" />
+
+                        <TextView
+                            android:id="@+id/view18_1"
+                            android:layout_width="346dp"
+                            android:layout_height="match_parent"
+                            android:layout_margin="1dp"
+                            android:background="@color/white" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="180sp">
+
+                        <TextView
+                            android:id="@+id/view19"
+                            android:layout_height="180sp"
+                            android:layout_rowWeight="1"
+                            android:layout_columnWeight="1"
+                            android:layout_margin="1dp"
+                            android:background="@color/white"
+                            android:text="19시"
+                            android:textSize="17sp" />
+
+                        <TextView
+                            android:id="@+id/view19_1"
+                            android:layout_width="346dp"
+                            android:layout_height="match_parent"
+                            android:layout_margin="1dp"
+                            android:background="@color/white" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="180sp">
+
+                        <TextView
+                            android:id="@+id/view20"
+                            android:layout_height="180sp"
+                            android:layout_rowWeight="1"
+                            android:layout_columnWeight="1"
+                            android:layout_margin="1dp"
+                            android:background="@color/white"
+                            android:text="20시"
+                            android:textSize="17sp" />
+
+                        <TextView
+                            android:id="@+id/view20_1"
+                            android:layout_width="346dp"
+                            android:layout_height="match_parent"
+                            android:layout_margin="1dp"
+                            android:background="@color/white" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="180sp">
+
+                        <TextView
+                            android:id="@+id/view21"
+                            android:layout_height="180sp"
+                            android:layout_rowWeight="1"
+                            android:layout_columnWeight="1"
+                            android:layout_margin="1dp"
+                            android:background="@color/white"
+                            android:text="21시"
+                            android:textSize="17sp" />
+
+                        <TextView
+                            android:id="@+id/view21_1"
+                            android:layout_width="346dp"
+                            android:layout_height="match_parent"
+                            android:layout_margin="1dp"
+                            android:background="@color/white" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="180sp">
+
+                        <TextView
+                            android:id="@+id/view22"
+                            android:layout_height="180sp"
+                            android:layout_rowWeight="1"
+                            android:layout_columnWeight="1"
+                            android:layout_margin="1dp"
+                            android:background="@color/white"
+                            android:text="22시"
+                            android:textSize="17sp" />
+
+                        <TextView
+                            android:id="@+id/view22_1"
+                            android:layout_width="346dp"
+                            android:layout_height="match_parent"
+                            android:layout_margin="1dp"
+                            android:background="@color/white" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="180sp">
+
+                        <TextView
+                            android:id="@+id/view23"
+                            android:layout_height="180sp"
+                            android:layout_rowWeight="1"
+                            android:layout_columnWeight="1"
+                            android:layout_margin="1dp"
+                            android:background="@color/white"
+                            android:text="23시"
+                            android:textSize="17sp" />
+
+                        <TextView
+                            android:id="@+id/view23_1"
+                            android:layout_width="346dp"
+                            android:layout_height="match_parent"
+                            android:layout_margin="1dp"
+                            android:background="@color/white" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="180sp">
+
+                        <TextView
+                            android:id="@+id/view24"
+                            android:layout_height="180sp"
+                            android:layout_rowWeight="1"
+                            android:layout_columnWeight="1"
+                            android:layout_margin="1dp"
+                            android:background="@color/white"
+                            android:text="24시"
+                            android:textSize="17sp" />
+
+                        <TextView
+                            android:id="@+id/view24_1"
+                            android:layout_width="346dp"
+                            android:layout_height="match_parent"
+                            android:layout_margin="1dp"
+                            android:background="@color/white" />
+
+                    </TableRow>
+
+                </TableLayout>
+            </RelativeLayout>
+
+        </ScrollView>
+
+</LinearLayout>
