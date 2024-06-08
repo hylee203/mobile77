@@ -130,7 +130,7 @@
             android:layout_height="wrap_content"
             android:background="@drawable/round_square_button"
             android:text="Start"
-            android:textColor="#FFFFFF"
+            android:textColor="#000000"
             android:textStyle="bold" />
 
         <Button
@@ -141,7 +141,7 @@
             android:background="@drawable/round_square_button"
             android:enabled="false"
             android:text="Finish"
-            android:textColor="#FFFFFF"
+            android:textColor="#000000"
             android:textStyle="bold" />
 
     </LinearLayout>
